@@ -4,19 +4,28 @@ public class Emp_Wage_Builder {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int Is_Part_Time=1;
-		int Is_Full_Time=2;
-		int Emp_Rate_Per_Hour=20;
+		public static final int Is_Part_Time=1;
+		public static final int Is_Full_Time=2;
+		public static final int Emp_Rate_Per_Hour=20;
+		public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 		int empHrs=0;
 		int empWage=0;
-		double empCheck=Math.floor(Math.random()*10)%3;
-		if(empCheck==Is_Part_Time)
+		int empCheck=(int) Math.floor(Math.random()*10)%3;
+		switch(empCheck) {
+		case Is_Part_Time:
 		empHrs=4;
-		else if(empCheck==Is_Full_Time)
+		break;
+
+		case Is_Full_Time:
 		empHrs=8;
-		else
+		break;
+
+		default:
 		empHrs=0;
-		empWage=empHrs * Emp_Rate_Per_Hour;
+		}
+		empWage=empHrs*Emp_Rate_Per_Hour;
 		System.out.println("Emp Wage : "+empWage);
 	}
 
